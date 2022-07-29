@@ -6,10 +6,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<style>
+			body,
+			html {
+				margin: 0px;
+				padding: 0px;
+				height: 100%;
+				overflow: hidden;
+			}
 			body {
 				font-family: Arial, Helvetica, sans-serif;
 				color: white;
-				background-color: #272732;
 				font-size: 16px;
 			}
 			.container {
@@ -24,27 +30,51 @@
 				border: solid 1px #6f696d;
 				background-color: #272732;
 				margin-top: 5px;
-				width: 100%;
+				width: 90%;
 			}
 			input[type="radio"] {
 				color: white;
 				margin-top: 5px;
 			}
-			input[type="button"] {
+			input[type="submit"] {
 				padding: 10px;
-				width: 105%;
+				width: 100%;
 				font-size: 20px;
 			}
 			select {
 				color: white;
-				padding: 10px;
+				padding-top: 10px;
+				padding-bottom: 10px;
 				border: solid 1px #6f696d;
 				background-color: #272732;
 				margin-top: 5px;
-				width: 105%;
+				width: 99%;
 			}
 			td {
-				padding: 15px;
+				padding: 10px;
+			}
+
+			.left-div,
+			.right-div {
+				height: 100vh;
+			}
+
+			.left-div {
+				width: 900px;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+				background-color: #272732;
+			}
+
+			.form-container {
+				width: 600px;
+				margin-right: 100px;
+			}
+
+			.right-div {
+				width: 70%;
+				background-color: #2b2d38;
 			}
 		</style>
 
@@ -63,83 +93,98 @@
 
 	<body>
 		<div class="container">
-			<div>
-				<h2 style="margin-left: 16px">Join the training bootcamp.</h2>
-				<form action="Output.html">
-					<table class="table">
-						<tr>
-							<td>
-								<label>First Name</label> <br />
-								<input type="text" id="firstname-input" />
-							</td>
-							<td>
-								<label>Last Name</label> <br />
-								<input type="text" id="lastname-input" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<label>Email</label> <br />
-								<input type="text" id="email-input" />
-							</td>
-							<td>
-								<label>Contact Number</label> <br />
-								<input type="text" id="number-input" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<label>First Name</label> <br />
-								<input type="text" id="firstname-input" />
-							</td>
-							<td>
-								<label>Last Name</label> <br />
-								<input type="text" id="lastname-input" />
-							</td>
-						</tr>
-						<tr>
-							<td colspan="5">
-								<label>Address</label> <br />
-								<input type="text" id="address-input" style="width: 100%" />
-							</td>
-						</tr>
-						<tr>
-							<td colspan="5">
-								<label>Training Plan</label> <br />
-								<select name="plan" id="plan">
-									<option value="standard">Standard</option>
-									<option value="premium">Premium</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<label>Gender</label> <br />
-								<input type="radio" name="radio-buttons" value="Male" />
-								<label>Male</label> <br />
-								<input type="radio" name="radio-buttons" value="Female" />
-								<label>Female</label> <br />
-								<input type="radio" name="radio-buttons" value="Other" />
-								<label>Other</label>
-							</td>
-							<td>
-								<label>Employement Status</label> <br />
-								<input type="radio" name="radio-buttons" value="Employed" />
-								<label>Employed</label> <br />
-								<input type="radio" name="radio-buttons" value="Unemployed" />
-								<label>Unemployed</label> <br />
-								<input type="radio" name="radio-buttons" value="Student" />
-								<label>Student</label>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="5">
-								<input type="button" value="Submit my registeration" />
-							</td>
-						</tr>
-					</table>
-				</form>
+			<div class="left-div">
+				<div class="form-container">
+					<form action="Output.html">
+						<table class="table">
+							<tr>
+								<td colspan="5">
+									<small>August 10, 2022 12:00 noon</small>
+									<h1>KodeGo's 12 weeks coding bootcamp.</h1>
+									<p>
+										It doesn't matter if you're a beginner or a career shifter.
+										Train remotely with KodeGo's bootcamps and we'll match you
+										to a company that can jumpstart your tech career.
+									</p>
+									<h2>Join the training bootcamp.</h2>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label>First Name</label> <br />
+									<input type="text" id="firstname-input" />
+								</td>
+								<td>
+									<label>Last Name</label> <br />
+									<input type="text" id="lastname-input" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label>Email</label> <br />
+									<input type="text" id="email-input" />
+								</td>
+								<td>
+									<label>Contact Number</label> <br />
+									<input type="text" id="number-input" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label>Zip Code</label> <br />
+									<input type="text" id="zipcode-input" />
+								</td>
+								<td>
+									<label>Street Address</label> <br />
+									<input type="text" id="street-input" />
+								</td>
+							</tr>
+							<tr>
+								<td colspan="5">
+									<label>City Address</label> <br />
+									<input type="text" id="address-input" style="width: 95%" />
+								</td>
+							</tr>
+							<tr>
+								<td colspan="5">
+									<label>Training Plan</label> <br />
+									<select name="plan" id="plan">
+										<option value="standard">Standard</option>
+										<option value="premium">Premium</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label>Gender</label> <br />
+									<input type="radio" name="radio-buttons" value="Male" />
+									<label>Male</label> <br />
+									<input type="radio" name="radio-buttons" value="Female" />
+									<label>Female</label> <br />
+									<input type="radio" name="radio-buttons" value="Other" />
+									<label>Other</label>
+								</td>
+								<td>
+									<label>Employement Status</label> <br />
+									<input type="radio" name="radio-buttons" value="Employed" />
+									<label>Employed</label> <br />
+									<input type="radio" name="radio-buttons" value="Unemployed" />
+									<label>Unemployed</label> <br />
+									<input type="radio" name="radio-buttons" value="Student" />
+									<label>Student</label>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="5">
+									<input type="submit" value="Submit my registeration" />
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
 			</div>
+
+			<div class="right-div"></div>
 		</div>
 	</body>
 </html>
