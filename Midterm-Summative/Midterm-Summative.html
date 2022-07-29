@@ -60,7 +60,7 @@
 			}
 
 			.left-div {
-				width: 900px;
+				width: 1400px;
 				display: flex;
 				flex-direction: column;
 				align-items: flex-end;
@@ -74,7 +74,31 @@
 
 			.right-div {
 				width: 70%;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
 				background-color: #2b2d38;
+			}
+
+			.portrait {
+				border-radius: 100%;
+				width: 170px;
+				margin: 20px;
+			}
+
+			.mentors-container {
+				margin-left: 50px;
+			}
+
+			.mentor {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.icon {
+				width: 40px;
+				margin-left: 5px;
+				margin-right: 5px;
 			}
 		</style>
 
@@ -99,7 +123,6 @@
 						<table class="table">
 							<tr>
 								<td colspan="5">
-									<small>August 10, 2022 12:00 noon</small>
 									<h1>KodeGo's 12 weeks coding bootcamp.</h1>
 									<p>
 										It doesn't matter if you're a beginner or a career shifter.
@@ -112,37 +135,37 @@
 							<tr>
 								<td>
 									<label>First Name</label> <br />
-									<input type="text" id="firstname-input" />
+									<input type="text" id="firstname-input" placeholder="Enter your first name"/>
 								</td>
 								<td>
 									<label>Last Name</label> <br />
-									<input type="text" id="lastname-input" />
+									<input type="text" id="lastname-input" placeholder="Enter your last name"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label>Email</label> <br />
-									<input type="text" id="email-input" />
+									<input type="text" id="email-input" placeholder="Enter your email"/>
 								</td>
 								<td>
 									<label>Contact Number</label> <br />
-									<input type="text" id="number-input" />
+									<input type="text" id="number-input" placeholder="Enter your mobile number"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label>Zip Code</label> <br />
-									<input type="text" id="zipcode-input" />
+									<input type="text" id="zipcode-input" placeholder="Enter your zipcode" />
 								</td>
 								<td>
 									<label>Street Address</label> <br />
-									<input type="text" id="street-input" />
+									<input type="text" id="street-input" placeholder="Enter your street Address"/>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="5">
 									<label>City Address</label> <br />
-									<input type="text" id="address-input" style="width: 95%" />
+									<input type="text" id="address-input" style="width: 95%" placeholder="Where do you live?"/>
 								</td>
 							</tr>
 							<tr>
@@ -184,7 +207,40 @@
 				</div>
 			</div>
 
-			<div class="right-div"></div>
+			<div class="right-div">
+				<div class="mentors-container">
+					<h1>Mentors</h1>
+					<div>
+						<div class="mentor">
+							<img class="portrait" src="images/1.jpg" alt="" />
+							<div>
+								<h2>George Martin</h1>
+								<p>Educator, Web</p>
+							</div>
+						</div>
+						<div class="mentor">
+							<img class="portrait" src="images/2.jpg" alt="" />
+							<div>
+								<h2>Karen Smith</h1>
+								<p>Cofounder, Jea</p>
+							</div>
+						</div>
+						<div class="mentor">
+							<img class="portrait" src="images/3.jpg" alt="" />
+							<div>
+								<h2>The Man</h1>
+								<p>Developer, Web designer</p>
+							</div>
+						</div>
+					</div>
+					<h3>Share</h3>
+					<div>
+						<img src="images/fb.jpg" alt="" class="icon">
+						<img src="images/ins.png" alt="" class="icon">
+						<img src="images/twi.jpg" alt="" class="icon">
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
