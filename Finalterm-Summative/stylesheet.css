@@ -1,85 +1,113 @@
 body,
 html {
-	font-family: Arial, Helvetica, sans-serif;
-	margin: 0px;
 	padding: 0px;
+	margin: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+
+.top-nav__background {
+	background-color: #2d2927;
+	width: 100%;
+	height: 55px;
 }
 
 .top-nav {
-	background-color: black;
-	height: 40px;
-	width: 100%;
+	width: inherit;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .nav-container {
-	height: inherit;
-	width: inherit;
+	width: 700px;
+	height: 50px;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	align-items: center;
-}
-.nav-container div {
-	margin: 0px 16px 0px 16px;
+	justify-content: space-between;
 }
 
-.logo-icon {
-	width: fit-content;
-	height: 90%;
-}
-
-img {
-	width: auto;
-	height: 100%;
-}
-
-.search-bar input[type="text"] {
-	font-size: 20px;
-	width: 400px;
-	padding: 2px 6px 2px 6px;
-	border: 1px solid black;
-	border-radius: 5%;
-}
-
-.search-bar input[type="button"] {
-	background-image: none;
-	background-color: transparent;
-	background-repeat: no-repeat;
-	height: 100%;
-	width: 16px;
-}
-
-.nav-anchors {
+.top-nav .logo-container {
+	position: relative;
+	z-index: 100;
+	padding: 10px;
 	display: flex;
-	flex-direction: row;
-	height: 100%;
-}
-
-.nav-anchors a {
-	text-decoration: none;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	height: inherit;
+	width: 150px;
+	box-shadow: 0px 0px 20px 10px #141414;
+	font-size: 24px;
 	font-weight: bold;
-	font-size: 18px;
-	padding: 13px 8px 13px 8px;
-	color: white;
-}
-
-.nav-anchors a:hover {
-	background-color: black;
 }
 
 .container {
-	width: 100%;
+	position: relative;
+	z-index: 1;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: fit-content;
+	color: black;
+	background-color: beige;
+}
+
+.footer-container {
+	width: 100%;
+	height: 200px;
+	color: white;
+	background-color: #2d2927;
+	display: flex;
+	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 }
 
-.footer {
-	color: white;
-	height: 200px;
-	widows: 100%;
-	background-color: black;
+.emails div {
+	margin: 6px 0px 0px 0px;
+}
+
+.emails input[type="text"] {
+	font-size: 16px;
+	width: 150px;
+}
+
+.anchors {
 	display: flex;
 	flex-direction: row;
+	padding: 0px 80px 0px 80px;
+	border: 0px;
+}
+
+.anchors div {
+	display: flex;
+	flex-direction: column;
+	margin: 0px 12px 0px 12px;
+}
+
+.anchors a {
+	font-size: 12;
+	padding: 8px;
+	text-align: center;
+}
+
+.socials .icons {
+	display: flex;
+	flex-direction: row;
+	margin-top: 8px;
+}
+
+.socials .icons img {
+	height: 30px;
+	width: 30px;
+	margin: 0px 4px 0px 0px;
 }
