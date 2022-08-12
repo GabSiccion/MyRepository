@@ -24,7 +24,6 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 200px;
 }
 
 .nav-container {
@@ -103,16 +102,80 @@ a {
 	margin: 0px 4px 0px 0px;
 }
 
-/* || REGISTER PAGE & LOGIN PAGE */
+/* || LANDING PAGE */
+.landing-page-container {
+	padding: 30px 0px 70px 0px;
+	display: flex;
+	justify-content: center;
+	color: black;
+	background-image: linear-gradient(to bottom right, rgb(150, 61, 61), #272732);
+}
 
-body {
+.landing-page-container span {
 	color: white;
 }
+
+.featured-container {
+	height: fit-content;
+	width: 1125px;
+	height: auto;
+	margin-bottom: 30px;
+}
+
+.featured-container img {
+	object-fit: contain;
+	width: inherit;
+	height: inherit;
+}
+
+.discounts-container {
+	color: black;
+	background-color: white;
+	overflow: auto;
+	white-space: nowrap;
+	display: flex;
+	flex-direction: row;
+	height: fit-content;
+	width: 1125px;
+}
+
+.discounts-container .item {
+	border: 2px black solid;
+	text-align: center;
+	height: 250px;
+	width: 205px;
+	margin: 10px;
+}
+
+.discounts-container .item img {
+	object-fit: contain;
+	height: 200px;
+	width: 200px;
+}
+
+.browse-anchor {
+	background-color: white;
+	margin-top: 20px;
+	padding: 10px 0px 10px 0px;
+	width: 1125px;
+	font-size: 44px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.browse-anchor a {
+	color: black;
+	font-size: 42px;
+}
+
+/* || REGISTER PAGE & LOGIN PAGE */
 
 .container {
 	display: flex;
 	justify-content: center;
 	background-color: #272732;
+	color: white;
 }
 
 span {
