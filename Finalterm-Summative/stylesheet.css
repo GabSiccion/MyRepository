@@ -507,3 +507,31 @@ span {
 	color: white;
 	transition: 0.2s;
 }
+
+/* || CONTACT US PAGE */
+
+.contact-container {
+	background-color: white;
+	color: black;
+	height: 73.1vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.contact-container img {
+	transform: scale(1.3);
+	margin: 40px 40px 40px 40px;
+}
+
+.contact-container p {
+	line-height: 36px;
+}
+
+.contact-container div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 50px 50px 50px 50px;
+}
