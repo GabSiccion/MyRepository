@@ -1,0 +1,19 @@
+.col button:hover {
+	transform: scale(1.05);
+	transition: 200ms;
+}
+
+.col button {
+	height: auto;
+	width: inherit;
+	margin: 10px;
+	border: none;
+	background: none;
+	font-size: 1.2rem;
+}
+
+.col button img {
+	aspect-ratio: 1;
+	height: auto;
+	width: 90%;
+}

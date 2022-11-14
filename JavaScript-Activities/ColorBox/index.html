@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			input[type="button"] {
+				width: 200px;
+				height: 200px;
+				margin: 5px;
+				border: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			Box ID (1-5)
+			<input type="text" id="name" />
+			Box Color
+			<input type="text" id="color" onchange="myFunction()" />
+			<br />
+
+			<input type="button" id="1" />
+			<input type="button" id="2" />
+			<input type="button" id="3" />
+			<input type="button" id="4" />
+			<input type="button" id="5" />
+		</div>
+
+		<script>
+			function myFunction() {
+				id = document.getElementById("name").value;
+				color = String(document.getElementById("color").value);
+				document.getElementById(id).style.background = color;
+			}
+		</script>
+	</body>
+</html>

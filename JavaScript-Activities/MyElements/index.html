@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        #div1, #div2, #div3, #div4 {
+            position:inline;
+            border:2px solid #dedede;
+            width: 200px;
+            background-color:#f1f1f1;
+            border-radius: 5px;
+            padding: 50px;
+            margin:50px 500px;
+        }
+        body{
+            background-color: grey;
+        }
+        #totalexpense, #savings {
+            width: 100%;
+        }
+
+    </style>
+    <title>Creating Elements</title>
+</head>
+<body>
+    <h3 style="color:white;">Choose Function</h3>
+    
+    <button onclick="chat()">CHAT</button>
+    <button onclick="math()">MATH</button>
+    <button onclick="power()">POWER</button>
+    <button onclick="budget()">BUDGET</button>
+
+    <script>
+        var msg,msgbox,sname,div1,div2,div3,div4,n1,n2,ans,sum,label;
+
+        function power() {
+            rem();
+            div3 = document.createElement("div");
+            div3.id= "div3";
+
+            let lbl = document.createElement("label");
+            lbl.innerHTML = "Power";
+
+            document.body.appendChild(div3);
+
+            let current = document.createElement("input");
+            current.setAttribute("type","number");
+            current.id = "current";
+            let voltage = document.createElement("input");
+            voltage.setAttribute("type","number");
+            voltage.id = "voltage";
+            let powerflow = document.createElement("input");
+            powerflow.setAttribute("type","number");
+            powerflow.id = "powerflow";
+            let power = document.createElement("label");
+            power.innerHTML = "The value of Power(p): ";
+
+            let btn = document.createElement("input");
+            btn = document.createElement("INPUT");
+            btn.setAttribute("type","button");
+            btn.value = "Calculate Power(p)";
+            btn.id = "btn";
+
+            btn.addEventListener( "click",() => {
+                power.innerHTML = "The value of Power(p): " + getPower();
+            })
+
+            div3.append(current);
+            div3.append(voltage);
+            div3.append(powerflow);
+            div3.append(power);
+            div3.append(btn);
+
+            function getPower() {
+                return Number(current.value) * Number(voltage.value) * Number(powerflow.value);       
+            }
+        }
+        
+        function budget() {
+            rem();
+            div4 = document.createElement("div");
+            div4.id= "div4";
+
+            let ul = document.createElement("ul");
+            
+
+            let lbl = document.createElement("label");
+            lbl.innerHTML = "Budget";
+            let bill1 = document.createElement("input");
+            bill1.setAttribute("type","number");
+            bill1.id = "bill1";
+            let bill1label = document.createElement("label");
+            bill1label.innerHTML = "Electricity";
+            bill1label.setAttribute("for",bill1);
+
+            let bill2 = document.createElement("input");
+            bill2.setAttribute("type","number");
+            bill2.id = "bill2";
+            let bill2label = document.createElement("label");
+            bill2label.innerHTML = "Water";
+            bill2label.setAttribute("for",bill2);
+            
+            let bill3 = document.createElement("input");
+            bill3.setAttribute("type","number");
+            bill3.id = "bill3";
+            let bill3label = document.createElement("label");
+            bill3label.innerHTML = "Food";
+            bill3label.setAttribute("for",bill3);
+
+            let bill4 = document.createElement("input");
+            bill4.setAttribute("type","number");
+            bill4.id = "bill4";
+            let bill4label = document.createElement("label");
+            bill4label.innerHTML = "Transportation";
+            bill4label.setAttribute("for",bill4);
+
+            let bill5 = document.createElement("input");
+            bill5.setAttribute("type","number");
+            bill5.id = "bill5";
+            let bill5label = document.createElement("label");
+            bill5label.innerHTML = "Emergency";
+            bill5label.setAttribute("for",bill5);
+
+            let bill6 = document.createElement("input");
+            bill6.setAttribute("type","number");
+            bill6.id = "bill6";
+            let bill6label = document.createElement("label");
+            bill6label.innerHTML = "Others";
+            bill6label.setAttribute("for",bill6);
+
+            var totalexpense = document.createElement("label");
+            totalexpense.innerHTML = "The total expenses:";
+            totalexpense.id = "totalexpense";
+
+            let budget = document.createElement("input");
+            budget.setAttribute("type","number");
+            budget.id = "budget";
+            let budgetlabel = document.createElement("label");
+            budgetlabel.innerHTML = "Budget";
+            budgetlabel.setAttribute("for",budget);
+
+            let savings = document.createElement("label");
+            savings.innerHTML = "The total savings:          ";
+            savings.id = "savings";
+
+            let btn = document.createElement("button");
+            btn.innerHTML = "Calculate Button";
+            btn.id = "btn";
+
+            btn.addEventListener("click", () => {
+                let expense = Number(bill1.value) + Number(bill2.value) + Number(bill3.value) + Number(bill4.value) + Number(bill5.value) + Number(bill6.value); 
+                totalexpense.innerHTML = "The total expenses: " + expense;
+                savings.innerHTML = "The total savings: " + (Number(budget.value) - expense); 
+            })
+
+            document.body.appendChild(div4);
+
+            div4.append(bill1label);
+            div4.append(bill1);
+            div4.append(bill2label);
+            div4.append(bill2);
+            div4.append(bill3label);
+            div4.append(bill3);
+            div4.append(bill4label);
+            div4.append(bill4);
+            div4.append(bill5label);
+            div4.append(bill5);
+            div4.append(bill6label);
+            div4.append(bill6);
+            div4.append(budgetlabel);
+            div4.append(budget);
+            div4.append(document.createElement("br"));
+            div4.append(totalexpense);
+            div4.append(document.createElement("br"));
+            div4.append(savings);
+            div4.append(btn);
+        }
+
+        function chat() {
+            rem();
+            div1 = document.createElement("div");
+            div1.id= "div1";
+
+            label1 = document.createElement("label");
+            label1.innerHTML = "Username";
+            sname = document.createElement("input");
+            sname.id = "sname";
+            label2 = document.createElement("label");
+            label2.innerHTML = "Message";
+            msg = document.createElement("TEXTAREA");
+            msg.id = "msg";
+            label3 = document.createElement("label");
+            label3.innerHTML = "Chat box";
+            msgbox = document.createElement("TEXTAREA");
+            msgbox.rows = 10;
+            msgbox.ariaDisabled = true;
+            msgbox.id = "msgbox";
+            btn = document.createElement("INPUT");
+            btn.setAttribute("type","button");
+            btn.value = "SEND";
+            btn.id = "btn";
+
+            document.body.appendChild(div1);
+
+            div1.appendChild(label1);
+            div1.appendChild(sname);
+            div1.appendChild(label2);
+            div1.appendChild(msg);
+            div1.appendChild(label3);
+            div1.appendChild(msgbox);
+            div1.appendChild(btn);
+
+            btn.addEventListener("click",send);
+        }
+
+        function send() {
+            msgbox.append(sname.value + ":" + msg.value + "\n");
+        }
+
+        function math() {
+            rem();
+            div2 = document.createElement("div")
+            div2.id = "div2";
+
+            p2 = document.createElement("p");
+            p2.innerHTML = "Enter 2 numbers";
+            p2.id = "p2";
+            
+            n1 = document.createElement("INPUT");
+            n1.setAttribute("type","number");
+            n1.id = "n1";
+            // num1 = document.getElementById("n1").value;
+
+            n2 = document.createElement("INPUT");
+            n2.setAttribute("type","number");
+            n2.id = "n2";
+
+            btn = document.createElement("INPUT");
+            btn.setAttribute("type","button");
+            btn.value = "Addition";
+            btn.id = "btn";
+
+            btn1 = document.createElement("INPUT");
+            btn1.setAttribute("type","button");
+            btn1.value = "Subtraction";
+            btn1.id = "btn1";
+
+            var sum = Number(n1.value) + Number(n2.value);
+            ans = document.createElement("p");
+            ans.id = "ans";
+
+            document.body.appendChild(div2);
+            div2.appendChild(p2);
+            div2.appendChild(n1);
+            div2.appendChild(n2);
+            div2.appendChild(ans);
+            div2.appendChild(btn);
+            div2.appendChild(btn1);
+
+            btn.addEventListener('click', () => {
+                ans.innerHTML = "Sum of the numbers :" + (Number(n1.value) + Number(n2.value));
+            })
+
+            btn1.addEventListener('click', () => {
+                ans.innerHTML = "Difference of the numbers : " + (Number(n1.value) - Number(n2.value));
+            })
+        }
+
+        function rem() {
+            if(document.contains(div1)) {
+                div1.remove();
+            } 
+            if(document.contains(div2)) {
+                div2.remove();
+            }
+            if(document.contains(div3)) {
+                div3.remove();
+            }
+            if(document.contains(div4)) {
+                div4.remove();
+            }
+        }
+    </script>
+</body>
+</html>
