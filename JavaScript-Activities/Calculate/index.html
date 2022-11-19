@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<script>
+			//Categories keys = Cheese, Fruits, Pasta, Cereals
+			var category = {
+				Cheese: [
+					"Cottage",
+					"Cheddar",
+					"Parmesan",
+					"Danish blue",
+					"Cream",
+					"Derby",
+					"Chesire",
+				],
+				Fruits: [
+					"Orange",
+					"Apple",
+					"Melon",
+					"Watermelon",
+					"Pear",
+					"Tomato",
+					"Mango",
+				],
+				Pasta: [
+					"Penne",
+					"Rigatoni",
+					"Farfalle",
+					"Fusilli",
+					"Orechiette",
+					"Ziti",
+				],
+				Cereals: [
+					"Cocoa Puffs",
+					"Koko Krunch",
+					"Cheerios",
+					"Rasin Bran",
+					"Frosted Flakes",
+				],
+			};
+
+			function categorychange() {
+				var keys = "<option>Please Select</option>";
+
+				var data = Object.keys(category);
+
+				for (i = 0; i < data.length; i++) {
+					keys += "<option>" + data[i] + "</option>";
+				}
+
+				document.getElementById("categoryselect").innerHTML = keys;
+			}
+
+			function productchange(selected) {
+				var products = "<option>Please Select</option>";
+				var data = category[selected];
+
+				for (i = 0; i < data.length; i++) {
+					products += "<option>" + data[i] + "</option>";
+				}
+
+				document.getElementById("productselect").innerHTML = products;
+			}
+
+			function productselected(selected) {
+				if (selected.value != "Please Select") {
+					document.getElementById("product").value = selected.value;
+				}
+			}
+
+			function compute() {
+				//elements
+				var product = document.getElementById("product").value;
+				var price = parseFloat(document.getElementById("price").value);
+				var quantity = parseFloat(document.getElementById("quantity").value);
+				var markup = parseFloat(document.getElementById("markup").value);
+
+				//computation
+				var newprice = price + price * (markup / 100);
+				var subtotal = quantity * newprice;
+
+				document.getElementById("newprice").value = newprice;
+				document.getElementById("subtotal").value = subtotal;
+
+				var totalcapital = parseFloat(
+					document.getElementById("totalcapital").value
+				);
+
+				var totalmarkup = parseFloat(
+					document.getElementById("totalmarkup").value
+				);
+
+				let newtotalcapital = totalcapital + price * quantity;
+				console.dir(newtotalcapital);
+				document.getElementById("totalcapital").value = newtotalcapital;
+
+				let newtotalmarkup = totalmarkup + quantity * (price * (markup / 100));
+				console.dir(newtotalmarkup);
+				document.getElementById("totalmarkup").value = newtotalmarkup;
+
+				var string =
+					product + " " + newprice + " x " + quantity + " = " + subtotal;
+
+				document.getElementById("textarea").value += string + "\n";
+			}
+
+			function clearfields() {
+				document.getElementById("product").value = "";
+				document.getElementById("price").value = "";
+				document.getElementById("quantity").value = "";
+				document.getElementById("markup").value = "";
+				document.getElementById("newprice").value = "0";
+				document.getElementById("subtotal").value = "0";
+				document.getElementById("totalcapital").value = "0";
+				document.getElementById("totalmarkup").value = "0";
+				document.getElementById("textarea").value = "";
+			}
+
+			window.onload = function () {
+				categorychange();
+			};
+		</script>
+	</head>
+	<body>
+		<div class="div2">
+			<div
+				style="
+					background-color: beige;
+					padding: 25px 25px 25px 25px;
+					height: fit-content;
+					width: fit-content;
+				"
+			>
+				<form>
+					<table style="width: 100%">
+						<tr>
+							<td>
+								Category:
+								<select
+									id="categoryselect"
+									style="margin-left: 5px; margin-right: 25px"
+									onchange="productchange(this.value)"
+								>
+									<option>Please Select</option>
+								</select>
+							</td>
+							<td>
+								Product:
+								<select
+									id="productselect"
+									style="margin-left: 5px"
+									onchange="productselected(this)"
+								>
+									<option>Please Select</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 50%">
+								<table>
+									<tr>
+										<td>Product:</td>
+										<td><input type="text" id="product" /></td>
+									</tr>
+									<tr>
+										<td>Price:</td>
+										<td><input type="text" id="price" /></td>
+									</tr>
+									<tr>
+										<td>Quantity:</td>
+										<td><input type="text" id="quantity" /></td>
+									</tr>
+									<tr>
+										<td>Mark up %:</td>
+										<td><input type="text" id="markup" /></td>
+									</tr>
+									<tr>
+										<td>New Price:</td>
+										<td><input type="text" id="newprice" /></td>
+									</tr>
+									<tr>
+										<td>Subtotal:</td>
+										<td><input type="text" id="subtotal" /></td>
+									</tr>
+								</table>
+							</td>
+							<td style="width: 50%">
+								<table>
+									<tr>
+										<textarea
+											style="width: 251px; height: 84px"
+											id="textarea"
+										></textarea>
+									</tr>
+									<tr>
+										<td>TotalCapital:</td>
+										<td><input type="text" id="totalcapital" value="0" /></td>
+									</tr>
+									<tr>
+										<td>TotalMarkUP:</td>
+										<td><input type="text" id="totalmarkup" value="0" /></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					<input type="button" onclick="compute()" value="Compute" />
+					<input type="button" onclick="clearfields()" value="Clear" />
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
