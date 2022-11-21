@@ -7,7 +7,6 @@
 		<title>Document</title>
 
 		<script>
-			//Categories keys = Cheese, Fruits, Pasta, Cereals
 			var category = {
 				Cheese: [
 					"Cottage",
@@ -75,143 +74,211 @@
 
 			function compute() {
 				//elements
-				var product = document.getElementById("product").value;
-				var price = parseFloat(document.getElementById("price").value);
-				var quantity = parseFloat(document.getElementById("quantity").value);
-				var markup = parseFloat(document.getElementById("markup").value);
+				var product = document.getElementById("product");
+				var price = document.getElementById("price");
+				var quantity = document.getElementById("quantity");
+				var markup = document.getElementById("markup");
+				var newprice = document.getElementById("newprice");
+				var subtotal = document.getElementById("subtotal");
+				var totalcapital = document.getElementById("totalcapital");
+				var totalmarkup = document.getElementById("totalmarkup");
 
 				//computation
-				var newprice = price + price * (markup / 100);
-				var subtotal = quantity * newprice;
+				newprice.value =
+					parseFloat(price.value) + price.value * (markup.value / 100);
+				subtotal.value = quantity.value * newprice.value;
 
-				document.getElementById("newprice").value = newprice;
-				document.getElementById("subtotal").value = subtotal;
-
-				var totalcapital = parseFloat(
-					document.getElementById("totalcapital").value
-				);
-
-				var totalmarkup = parseFloat(
-					document.getElementById("totalmarkup").value
-				);
-
-				let newtotalcapital = totalcapital + price * quantity;
-				console.dir(newtotalcapital);
-				document.getElementById("totalcapital").value = newtotalcapital;
-
-				let newtotalmarkup = totalmarkup + quantity * (price * (markup / 100));
-				console.dir(newtotalmarkup);
-				document.getElementById("totalmarkup").value = newtotalmarkup;
+				totalcapital.value =
+					parseFloat(totalcapital.value) + price.value * quantity.value;
+				totalmarkup.value =
+					parseFloat(totalmarkup.value) +
+					quantity.value * (price.value * (markup.value / 100));
 
 				var string =
-					product + " " + newprice + " x " + quantity + " = " + subtotal;
+					product.value +
+					" " +
+					newprice.value +
+					" x " +
+					quantity.value +
+					" = " +
+					subtotal.value;
 
 				document.getElementById("textarea").value += string + "\n";
 			}
 
 			function clearfields() {
-				document.getElementById("product").value = "";
-				document.getElementById("price").value = "";
-				document.getElementById("quantity").value = "";
-				document.getElementById("markup").value = "";
-				document.getElementById("newprice").value = "0";
-				document.getElementById("subtotal").value = "0";
-				document.getElementById("totalcapital").value = "0";
-				document.getElementById("totalmarkup").value = "0";
-				document.getElementById("textarea").value = "";
+				location.reload();
 			}
 
 			window.onload = function () {
 				categorychange();
 			};
 		</script>
+
+		<style>
+			body {
+				font-size: 1.2rem;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			.container {
+				display: flex;
+				justify-content: center;
+				align-items: cen;
+			}
+
+			.container .box {
+				background-color: beige;
+				padding: 1.2rem;
+				width: 700px;
+				height: fit-content;
+				border-radius: 1%;
+			}
+
+			.container .box .select-box,
+			.compute-box,
+			.right-box,
+			.left-box {
+				margin: 0.8rem;
+			}
+
+			.container .box .select-box {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.select-box select {
+				padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+				font-size: 1rem;
+				width: 30%;
+			}
+
+			.container .box .compute-box {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.container .box .compute-box div {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.left-box {
+				width: 40%;
+			}
+
+			.right-box {
+				width: 55%;
+			}
+
+			.left-box input,
+			.right-box input {
+				margin-bottom: 0.6rem;
+				padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+				font-size: 1rem;
+			}
+
+			.right-box .textarea-box {
+				flex: 1 1 auto;
+			}
+
+			.right-box textarea {
+				resize: none;
+				margin-bottom: 0.6rem;
+				flex: 1 1 auto;
+				font-size: 1rem;
+			}
+
+			.button-box {
+				width: inherit;
+				margin: 0 0 0.8rem 1.6rem;
+			}
+
+			.button-box input {
+				padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+				font-size: 1.2rem;
+			}
+		</style>
 	</head>
-	<body>
-		<div class="div2">
-			<div
-				style="
-					background-color: beige;
-					padding: 25px 25px 25px 25px;
-					height: fit-content;
-					width: fit-content;
-				"
-			>
-				<form>
-					<table style="width: 100%">
-						<tr>
-							<td>
-								Category:
-								<select
-									id="categoryselect"
-									style="margin-left: 5px; margin-right: 25px"
-									onchange="productchange(this.value)"
-								>
-									<option>Please Select</option>
-								</select>
-							</td>
-							<td>
-								Product:
-								<select
-									id="productselect"
-									style="margin-left: 5px"
-									onchange="productselected(this)"
-								>
-									<option>Please Select</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td style="width: 50%">
-								<table>
-									<tr>
-										<td>Product:</td>
-										<td><input type="text" id="product" /></td>
-									</tr>
-									<tr>
-										<td>Price:</td>
-										<td><input type="text" id="price" /></td>
-									</tr>
-									<tr>
-										<td>Quantity:</td>
-										<td><input type="text" id="quantity" /></td>
-									</tr>
-									<tr>
-										<td>Mark up %:</td>
-										<td><input type="text" id="markup" /></td>
-									</tr>
-									<tr>
-										<td>New Price:</td>
-										<td><input type="text" id="newprice" /></td>
-									</tr>
-									<tr>
-										<td>Subtotal:</td>
-										<td><input type="text" id="subtotal" /></td>
-									</tr>
-								</table>
-							</td>
-							<td style="width: 50%">
-								<table>
-									<tr>
-										<textarea
-											style="width: 251px; height: 84px"
-											id="textarea"
-										></textarea>
-									</tr>
-									<tr>
-										<td>TotalCapital:</td>
-										<td><input type="text" id="totalcapital" value="0" /></td>
-									</tr>
-									<tr>
-										<td>TotalMarkUP:</td>
-										<td><input type="text" id="totalmarkup" value="0" /></td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-					</table>
+	<body style="background-color: grey">
+		<div class="container">
+			<div class="box">
+				<div class="select-box">
+					<label style="margin-left: 0.8rem" for="catergoryselect"
+						>Category:
+					</label>
+					<select
+						id="categoryselect"
+						name="categoryselect"
+						style="margin-left: 0.6rem; margin-right: 1.2rem"
+						onchange="productchange(this.value)"
+					>
+						<option>Please Select</option>
+					</select>
+					<label for="productselect">Product: </label>
+					<select
+						id="productselect"
+						name="productselect"
+						style="margin-left: 0.6rem"
+						onchange="productselected(this)"
+					>
+						<option>Please Select</option>
+					</select>
+				</div>
+				<div class="compute-box">
+					<div class="left-box">
+						<label for="product">Product:</label>
+						<input type="text" id="product" name="product" disabled="true" />
+						<label for="price">Price:</label>
+						<input type="number" id="price" name="price" value="0" />
+						<label for="quantity">Quantity:</label>
+						<input type="number" id="quantity" name="quantity" value="0" />
+						<label for="markup">Mark up %:</label>
+						<input type="number" id="markup" name="markup" value="0" />
+						<label for="newprice">New Price:</label>
+						<input
+							type="number"
+							id="newprice"
+							name="newprice"
+							value="0"
+							disabled="true"
+						/>
+						<label for="subtotal">Subtotal:</label>
+						<input
+							type="number"
+							id="subtotal"
+							name="subtotal"
+							value="0"
+							disabled="true"
+						/>
+					</div>
+					<div class="right-box">
+						<div class="textarea-box">
+							<label for="textarea">Item List:</label>
+							<textarea id="textarea" name="textarea"></textarea>
+						</div>
+						<label for="totalcapital">New Price:</label>
+						<input
+							type="number"
+							id="totalcapital"
+							name="totalcapital"
+							value="0"
+							disabled="true"
+						/>
+						<label for="totalmarkup">Subtotal:</label>
+						<input
+							type="number"
+							id="totalmarkup"
+							name="totalmarkup"
+							value="0"
+							disabled="true"
+						/>
+					</div>
+				</div>
+				<div class="button-box">
 					<input type="button" onclick="compute()" value="Compute" />
 					<input type="button" onclick="clearfields()" value="Clear" />
-				</form>
+				</div>
 			</div>
 		</div>
 	</body>
