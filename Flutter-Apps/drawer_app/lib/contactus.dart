@@ -1,4 +1,5 @@
 import 'package:drawer_app/main.dart';
+import 'package:drawer_app/output.dart';
 import 'package:flutter/material.dart';
 import 'package:drawer_app/contactus.dart' as contactus_;
 import 'package:drawer_app/profile.dart' as profile_;
@@ -17,10 +18,15 @@ class _ContactUsState extends State<ContactUs> {
   TextEditingController output = TextEditingController();
 
   void printoutput() {
-    var list = [name, email, message];
-    list.forEach((element) {
-      output.text += "${element.text}\n";
-    });
+    Data list =
+        Data(myData: [name.text, email.text, message.text, output.text]);
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => Output(
+                data: list,
+              )),
+    );
   }
 
   @override

@@ -1,4 +1,5 @@
 import 'package:drawer_app/main.dart';
+import 'package:drawer_app/output.dart';
 import 'package:flutter/material.dart';
 import 'package:drawer_app/contactus.dart' as contactus_;
 import 'package:drawer_app/profile.dart' as profile_;
@@ -17,25 +18,28 @@ class _ProfileState extends State<Profile> {
   TextEditingController password = TextEditingController();
   TextEditingController confirmpassword = TextEditingController();
   TextEditingController email = TextEditingController();
-  TextEditingController output = TextEditingController();
+  TextEditingController tooltip = TextEditingController();
 
-  void printoutput() {
+  void printtooltip() {
     setState(() {
-      output.text = "";
+      tooltip.text = "";
       if (password.text == confirmpassword.text) {
-        var list = [
-          username,
-          firstname,
-          lastname,
-          password,
-          confirmpassword,
-          email
-        ];
-        list.forEach((element) {
-          output.text += element.text;
-        });
+        Data list = Data(myData: [
+          username.text,
+          firstname.text,
+          lastname.text,
+          password.text,
+          email.text
+        ]);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => Output(
+                    data: list,
+                  )),
+        );
       } else {
-        output.text = "Password and Confirm Password does not match";
+        tooltip.text = "Password and Confirm Password does not match";
       }
     });
   }
@@ -169,7 +173,7 @@ class _ProfileState extends State<Profile> {
                     child: const Text("Register"),
                     onPressed: () {
                       setState(() {
-                        printoutput();
+                        printtooltip();
                       });
                     },
                   ))
@@ -182,7 +186,7 @@ class _ProfileState extends State<Profile> {
                 children: <Widget>[
                   Flexible(
                       child: TextField(
-                    controller: output,
+                    controller: tooltip,
                   ))
                 ],
               )

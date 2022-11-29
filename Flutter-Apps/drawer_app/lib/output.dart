@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:drawer_app/main.dart';
 
-class Output extends StatefulWidget {
-  const Output({super.key});
+class Output extends StatelessWidget {
+  final Data data;
 
-  @override
-  State<Output> createState() => _OutputState();
-}
+  String display() {
+    String stringdata = "";
+    for (var element in data.myData) {
+      stringdata += "$element \n";
+    }
+    return stringdata;
+  }
 
-class _OutputState extends State<Output> {
-  TextEditingController output = TextEditingController();
+  const Output({required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +21,8 @@ class _OutputState extends State<Output> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 14),
         child: Center(
-            child: Row(
-          children: <Widget>[
-            Flexible(
-                child: TextField(
-              controller: output,
-            ))
-          ],
-        )),
+          child: Text(display()),
+        ),
       ),
     );
   }

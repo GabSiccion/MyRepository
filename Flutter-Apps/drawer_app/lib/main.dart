@@ -18,6 +18,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class Data {
+  List myData = [];
+  Data({required this.myData});
+}
+
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, required this.title});
 
