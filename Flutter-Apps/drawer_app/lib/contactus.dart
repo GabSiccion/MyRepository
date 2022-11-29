@@ -1,4 +1,7 @@
+import 'package:drawer_app/main.dart';
 import 'package:flutter/material.dart';
+import 'package:drawer_app/contactus.dart' as contactus_;
+import 'package:drawer_app/profile.dart' as profile_;
 
 class ContactUs extends StatefulWidget {
   const ContactUs({super.key});
@@ -117,6 +120,49 @@ class _ContactUsState extends State<ContactUs> {
                   ],
                 ),
               ]),
+        ),
+      ),
+      drawer: Drawer(
+        // Add a ListView to the drawer. This ensures the user can scroll
+        // through the options in the drawer if there isn't enough vertical
+        // space to fit everything.
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MyApp()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Contact Us'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const contactus_.ContactUs()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Profile'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const profile_.Profile()),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );

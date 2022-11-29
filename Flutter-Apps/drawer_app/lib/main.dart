@@ -39,6 +39,16 @@ class MyHomePage extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MyApp()),
+                );
+              },
+            ),
+            ListTile(
               title: const Text('Contact Us'),
               onTap: () {
                 Navigator.pop(context);
