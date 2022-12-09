@@ -117,4 +117,43 @@ const questions = [
 		correct: "a",
 		category: "Networking",
 	},
+	{
+		question:
+			"Which of these programming languages is considered as a back-end programming language?",
+		a: "HTML",
+		b: "CSS",
+		c: "Sass",
+		d: "PHP",
+		correct: "d",
+		category: "Web Development",
+	},
+	{
+		question: "What does HTML stand for?",
+		a: "Hyper Terminal Markup Language",
+		b: "Hypertext Markup Language",
+		c: "High Tracing Marketing Language",
+		d: "Helicopter Terminal Maintenance Language",
+		correct: "b",
+		category: "Web Development",
+	},
+	{
+		question:
+			"Which of the programming languages is made by James Gosling? 1Networking",
+		a: "Java",
+		b: "C#",
+		c: "JavaScript",
+		d: "HTML",
+		correct: "a",
+		category: "Networking",
+	},
+	{
+		question:
+			"Which of the programming languages is made by James Gosling? 2Networking",
+		a: "Java",
+		b: "C#",
+		c: "JavaScript",
+		d: "HTML",
+		correct: "a",
+		category: "Networking",
+	},
 ];
