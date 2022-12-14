@@ -1,0 +1,85 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(28, 35, 48);
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.nav-bar{
+    background-color: rgb(145, 253, 255);
+    color: black;
+    width: 100%;
+    height: fit-content;
+}
+
+.nav-container{
+    padding: 0 1rem 0 1rem;
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+}
+
+.nav-items a{
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.nav-items a:hover{
+    color: white;
+    background-color: rgb(28, 35, 48);
+}
+
+.container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cake-container {
+    display: flex;
+    flex-direction: row;
+    row-gap: 100p;
+}
+
+.cake {
+    border-radius: 5%;
+    background-color: black;
+    background-image: url(cakeborder.svg);
+    height: fit-content;
+    width: min-content;
+    min-height: 300px;
+    min-width: 300px;
+    overflow: hide;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cake-text{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: xx-large;
+    padding: 1rem
+}
+
+.cake-component{
+    margin-bottom: 0.8rem;
+}
+
+.cake-editor{
+    padding: 0 0 0 1rem;
+}
+
+.cake-editor p{
+    margin:0px;
+    padding:0px;
+}

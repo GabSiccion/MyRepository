@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Cake Thing</title>
+</head>
+<body>
+    <header class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-items">
+                <a>Test</a>
+                <a>Test</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="cake-container">
+            <div class="cake" id="cake">
+                <p class="cake-text" id="cake-text">Happy birthday to me Another line to make it longer.</p>
+            </div>
+            <div class="cake-editor">
+                <div class="icingselector-container cake-component">
+                    <p>Icing Color</p>
+                    <select name="icingselector" id="icingselector" onchange="icingcolorchange(this)">
+                        <option value="saddlebrown">Chocolate</option>
+                        <option value="white">Vanilla</option>
+                        <option value="pink">Strawberry</option>
+                    </select>
+                </div>
+                <div class="shapeselector-container cake-component">
+                    <p>Cake Shape</p>
+                    <button onclick="shapechange(this)">Circle</button>
+                    <button onclick="shapechange(this)">Square</button>
+                </div>
+                <div class="texteditor-container cake-component">
+                    <p>Cake Text</p>
+                    <textarea name="caketext" id="caketext" cols="30" rows="3" style="resize:none" onchange="textchange(this)"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
