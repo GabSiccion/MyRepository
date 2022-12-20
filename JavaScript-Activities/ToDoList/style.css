@@ -1,0 +1,24 @@
+body {
+    background-color: #404258;
+}
+
+.container {
+    height: 95vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.lists-container {
+    width: 20vw;
+}
+
+.items-container {
+    flex-grow: 100;
+}
+
+.lists-container, .items-container{
+    background-color: #474E68;
+    padding:1rem;
+    margin: 0.2rem;
+}
