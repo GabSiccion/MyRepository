@@ -11,3 +11,11 @@ const file = {
 
 const { firstName, gender, cart } = file;
 console.log(`Name: ${firstName}, gender: ${gender}, cart${cart} `);
+
+//arrow function
+const myFunky = (lastName) => {
+  console.log(`${lastName} is quite funky`);
+};
+myFunky("Power");
+
+//
