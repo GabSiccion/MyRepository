@@ -18,4 +18,19 @@ const myFunky = (lastName) => {
 };
 myFunky("Power");
 
-//
+//for of loop
+const charactersTJ = [
+  {
+    name: "Jerry",
+    race: "Mouse",
+  },
+  {
+    name: "Tom",
+    race: "Cat",
+  },
+];
+
+for (let characters of charactersTJ) {
+  const { name, race } = characters;
+  console.log(`${name} and ${race}`);
+}
