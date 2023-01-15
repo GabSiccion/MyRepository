@@ -1,85 +1,83 @@
-body{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(28, 35, 48);
-    color: white;
-    font-family:Arial, Helvetica, sans-serif;
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffc6d3;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.nav-bar{
-    background-color: rgb(145, 253, 255);
-    color: black;
-    width: 100%;
-    height: fit-content;
+.nav-bar {
+  background-color: #3a4f7a;
+  color: black;
+  width: 100%;
+  height: fit-content;
 }
 
-.nav-container{
-    padding: 0 1rem 0 1rem;
+.nav-container {
+  padding: 0.2rem 3rem 0.2rem 3rem;
 }
 
 .nav-items {
-    display: flex;
-    flex-direction: row;
-    width: inherit;
+  display: flex;
+  flex-direction: row;
+  width: inherit;
 }
 
-.nav-items a{
-    padding: 0.6rem 1rem 0.6rem 1rem;
-    font-size: x-large;
-    font-weight: 600;
+.nav-items a {
+  padding: 0.6rem 1rem 0.6rem 1rem;
+  font-size: x-large;
+  font-weight: 600;
+  color: #ffc6d3;
 }
 
-.nav-items a:hover{
-    color: white;
-    background-color: rgb(28, 35, 48);
+.nav-items a:hover {
+  color: white;
+  background-color: rgb(28, 35, 48);
+}
+
+.nav-items .icon {
+  width: auto;
+  height: 40px;
+  align-self: center;
 }
 
 .container {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 0.8in 1in 0.8in 1in;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
 }
 
 .cake-container {
-    display: flex;
-    flex-direction: row;
-    row-gap: 100p;
+  background-color: white;
+  width: 100%;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cake {
-    border-radius: 5%;
-    background-color: black;
-    background-image: url(cakeborder.svg);
-    height: fit-content;
-    width: min-content;
-    min-height: 300px;
-    min-width: 300px;
-    overflow: hide;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 300px;
+  width: 300px;
 }
 
-.cake-text{
-    text-align: center;
-    color: black;
-    font-weight: bold;
-    font-size: xx-large;
-    padding: 1rem
+.cake-text {
+  text-align: center;
 }
 
-.cake-component{
-    margin-bottom: 0.8rem;
+.cake-editor-container {
+  background-color: red;
+  width: 100%;
+  height: 700px;
 }
 
-.cake-editor{
-    padding: 0 0 0 1rem;
-}
-
-.cake-editor p{
-    margin:0px;
-    padding:0px;
+.cake-editor-container div {
+  margin-left: 3rem;
 }
