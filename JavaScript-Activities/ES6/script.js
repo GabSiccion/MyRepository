@@ -34,3 +34,15 @@ for (let characters of charactersTJ) {
   const { name, race } = characters;
   console.log(`${name} and ${race}`);
 }
+
+//Rest operator
+function sumArray(...nums) {
+  let sum = 0;
+  for (let num of nums) {
+    sum += num;
+  }
+  console.log(`this is the sum of the array ${sum}`);
+}
+
+sumArray(1, 2, 3, 4);
+sumArray(5, 8, 10);
