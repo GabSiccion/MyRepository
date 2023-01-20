@@ -10,10 +10,16 @@ class PlantListTile extends StatelessWidget {
     return Card(
       child: ListTile(
         leading: Image(image: AssetImage(plantObject['iconPath'])),
-        title: Text(plantObject['plantName']),
-        subtitle:
-            // ignore: prefer_interpolation_to_compose_strings
-            Text('Scientific name: ' + plantObject['plantScientificName']),
+        title: Text(
+          plantObject['plantName'],
+          style:
+              const TextStyle(color: Colors.green, fontWeight: FontWeight.w900),
+        ),
+        subtitle: Text(
+          // ignore: prefer_interpolation_to_compose_strings
+          'Scientific name: ' + plantObject['plantScientificName'],
+          style: const TextStyle(fontWeight: FontWeight.w600),
+        ),
         onTap: () {
           Navigator.push(
               context,
@@ -50,18 +56,25 @@ class PlantWindow extends StatelessWidget {
                 children: [
                   Text(
                     plantObject['plantName'],
-                    style: const TextStyle(fontSize: 25),
+                    style: const TextStyle(
+                        fontSize: 25,
+                        color: Colors.green,
+                        fontWeight: FontWeight.w900),
                     textAlign: TextAlign.left,
                   ),
                   Text(
-                    plantObject['plantScientificName'],
-                    style: const TextStyle(fontSize: 16),
+                    // ignore: prefer_interpolation_to_compose_strings
+                    'Scientific name: ' + plantObject['plantScientificName'],
+                    style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.grey),
                     textAlign: TextAlign.left,
                   ),
                   const SizedBox(height: 10),
                   Text(
                     plantObject['plantDescriptions'],
-                    style: const TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 18),
                   ),
                 ],
               ),

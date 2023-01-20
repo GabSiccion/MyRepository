@@ -13,7 +13,7 @@ class PlantLibraryApp extends StatelessWidget {
     return MaterialApp(
       title: 'Plant Library',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: const MyHomePage(title: 'Plant Library'),
     );
@@ -33,7 +33,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text(widget.title)), body: ListViewBuilder());
+        appBar: AppBar(
+            leading: const Image(image: AssetImage('assets/images/logo.png')),
+            title: Text(widget.title)),
+        body: ListViewBuilder());
   }
 }
 
