@@ -36,34 +36,38 @@ class PlantWindow extends StatelessWidget {
       appBar: AppBar(
         title: Text(plantObject['plantName']),
       ),
-      body: Column(
-        children: [
-          Container(
-            color: Colors.black,
-            child: Image(image: AssetImage(plantObject['iconPath'])),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  plantObject['plantName'],
-                  textAlign: TextAlign.left,
-                ),
-                Text(
-                  plantObject['plantScientificName'],
-                  textAlign: TextAlign.left,
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  plantObject['plantDescriptions'],
-                  textAlign: TextAlign.left,
-                ),
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              color: Colors.black,
+              child: Image(image: AssetImage(plantObject['iconPath'])),
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    plantObject['plantName'],
+                    style: const TextStyle(fontSize: 25),
+                    textAlign: TextAlign.left,
+                  ),
+                  Text(
+                    plantObject['plantScientificName'],
+                    style: const TextStyle(fontSize: 16),
+                    textAlign: TextAlign.left,
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    plantObject['plantDescriptions'],
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
