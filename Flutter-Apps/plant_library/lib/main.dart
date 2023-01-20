@@ -43,14 +43,86 @@ class ListViewBuilder extends StatelessWidget {
   final List<Map> _plantList = [
     {
       'iconPath': "assets/images/rose.webp",
-      'plantName': 'Rose',
-      'plantType': 'Flower',
+      'plantName': 'ROSE',
+      'plantScientificName': 'Rosa rubiginosa',
       'plantDescriptions': ['Description 1', 'Description 2']
     },
     {
-      'iconPath': "assets/images/rose.webp",
-      'plantName': 'Orange',
-      'plantType': 'Tree',
+      'iconPath': "assets/images/lily.webp",
+      'plantName': 'LILY',
+      'plantScientificName': 'Lilium',
+      'plantDescriptions': ['Description 1', 'Description 2']
+    },
+    {
+      'iconPath': "assets/images/tulip.webp",
+      'plantName': 'TULIP',
+      'plantScientificName': 'Tulipa',
+      'plantDescriptions': ['Description 1', 'Description 2']
+    },
+    {
+      'iconPath': "assets/images/orchid.webp",
+      'plantName': 'ORCHID',
+      'plantScientificName': 'Phalaenopsis',
+      'plantDescriptions': ['Description 1', 'Description 2']
+    },
+    {
+      'iconPath': "assets/images/carnation.webp",
+      'plantName': 'CARNATION',
+      'plantScientificName': 'Dianthus',
+      'plantDescriptions': ['Description 1', 'Description 2']
+    },
+    {
+      'iconPath': "assets/images/freesia.webp",
+      'plantName': 'FREESIA',
+      'plantScientificName': 'Freesia',
+      'plantDescriptions': ['Description 1', 'Description 2']
+    },
+    {
+      'iconPath': "assets/images/hyacynth.webp",
+      'plantName': 'HYACINTH',
+      'plantScientificName': 'Alstroemeria',
+      'plantDescriptions': ['Description 1', 'Description 2']
+    },
+    {
+      'iconPath': "assets/images/peruvian_lily.webp",
+      'plantName': 'PERUVIAN LILY',
+      'plantScientificName': 'Alstroemeria',
+      'plantDescriptions': ['Description 1', 'Description 2']
+    },
+    {
+      'iconPath': "assets/images/chrysanthemum.webp",
+      'plantName': 'CHRYSANTHEMUM',
+      'plantScientificName': 'Chrysanthemum',
+      'plantDescriptions': ['Description 1', 'Description 2']
+    },
+    {
+      'iconPath': "assets/images/gladiolus.webp",
+      'plantName': 'GLADIOLUS',
+      'plantScientificName': 'Gladiolus',
+      'plantDescriptions': ['Description 1', 'Description 2']
+    },
+    {
+      'iconPath': "assets/images/anemone.webp",
+      'plantName': 'ANEMONE',
+      'plantScientificName': 'Anemone',
+      'plantDescriptions': ['Description 1', 'Description 2']
+    },
+    {
+      'iconPath': "assets/images/daffodil.webp",
+      'plantName': 'DAFFODIL',
+      'plantScientificName': 'Narcissus',
+      'plantDescriptions': ['Description 1', 'Description 2']
+    },
+    {
+      'iconPath': "assets/images/poppy.webp",
+      'plantName': 'POPPY',
+      'plantScientificName': 'Papaver',
+      'plantDescriptions': ['Description 1', 'Description 2']
+    },
+    {
+      'iconPath': "assets/images/sunflower.webp",
+      'plantName': 'SUNFLOWER',
+      'plantScientificName': 'Helianthus',
       'plantDescriptions': ['Description 1', 'Description 2']
     },
   ];

@@ -9,8 +9,11 @@ class PlantListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
+        leading: Image(image: AssetImage(plantObject['iconPath'])),
         title: Text(plantObject['plantName']),
-        subtitle: Text(plantObject['plantType']),
+        subtitle:
+            // ignore: prefer_interpolation_to_compose_strings
+            Text('Scientific name: ' + plantObject['plantScientificName']),
       ),
     );
   }
